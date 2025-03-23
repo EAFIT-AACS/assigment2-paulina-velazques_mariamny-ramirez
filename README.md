@@ -2,7 +2,9 @@
 Student Information
 --
 Paulina Velásquez Londoño
+
 Mariamny Del Valle Ramírez Telles
+
 Class Number: 7309
 
 System and Tools Used
