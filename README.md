@@ -25,7 +25,7 @@ Clone this repository or download the files.
 
 Open a terminal or command prompt and navigate to the project directory.
 
-Run the following command to execute the program:
+Run the programn in the main
 
 Expected Output
 --
