@@ -1,4 +1,4 @@
-
+# Analizador de Gramáticas LL(1) y SLR(1)
 Student Information
 --
 Paulina Velásquez Londoño
@@ -15,59 +15,57 @@ Programming Language: Python 3.x
 
 Development Environment: PyCharm, VS Code, or any Python-compatible IDE
 
-Running the Implementation
---
-Prerequisites
 
-Ensure you have Python 3 installed on your system. You can check your Python version with:
+Este proyecto implementa un analizador sintáctico para gramáticas LL(1) y SLR(1) en Python. El programa permite:
+- Definir gramáticas libres de contexto
+- Calcular conjuntos FIRST y FOLLOW
+- Construir tablas de parsing para LL(1) y SLR(1)
+- Analizar cadenas de entrada según la gramática proporcionada
 
-Execution Steps
---
-Clone this repository or download the files.
+## Características principales
 
-Open a terminal or command prompt and navigate to the project directory.
+- **Cálculo de FIRST y FOLLOW**: Implementación completa de los algoritmos para calcular estos conjuntos fundamentales
+- **Análisis LL(1)**:
+  - Construcción de tabla de parsing
+  - Detección de conflictos LL(1)
+  - Visualización de la tabla
+- **Análisis SLR(1)**:
+  - Construcción de la colección canónica de items LR(0)
+  - Generación de tablas ACTION y GOTO
+  - Detección de conflictos SLR(1)
+- **Interfaz interactiva**: Menú para ingresar gramáticas y probar cadenas
 
-Run the programn in the main
+## Requisitos
 
-Expected Output
---
-The program generates valid and invalid palindrome strings.
+- Python 3.x
+- No se requieren librerías externas
 
-It evaluates them using a Pushdown Automaton (PDA) and displays whether each string is accepted or rejected.
+## Instrucciones de uso
 
-It provides a step-by-step breakdown of valid palindrome processing.
+1. Ejecutar el programa: `python analizador.py`
+2. Seguir las instrucciones para ingresar la gramática:
+   - Especificar número de producciones
+   - Ingresar cada producción en formato `S -> A B | C` (usar 'e' para épsilon)
+3. El programa analizará la gramática y mostrará:
+   - Los conjuntos FIRST y FOLLOW
+   - Si la gramática es LL(1) y/o SLR(1)
+4. Seleccionar opción para usar el parser LL(1) o SLR(1) (si aplica)
+5. Ingresar cadenas para analizar sintácticamente
 
-![image](https://github.com/user-attachments/assets/f6675c05-a6ad-4a77-8b11-522398c9cef3)
+## Ejemplo de gramática válida
 
-![image](https://github.com/user-attachments/assets/ef962686-1ce2-4ca5-9344-9ca22c6e0cdb)
+```
+S -> A B C
+A -> a A | e
+B -> b B | e
+C -> c
+```
 
-Code Explanation
---
-Algorithm 1: Generating Strings
+## Limitaciones
 
-ALGORITHM_1_LFCO_PVMR.py generates random valid palindromes and invalid strings.
-
-A valid string follows the palindrome structure (reads the same forward and backward).
-
-An invalid string is randomly generated to ensure it does not form a palindrome.
-
-Algorithm 2: Pushdown Automaton (PDA) Validation
-
-ALGORITHM_2_LFCO_PVMR.py implements a PDA to check if a given string is a palindrome.
-
-The PDA pushes the first half of the string onto a stack and then verifies the second half against it.
-
-If all characters match, the string is accepted; otherwise, it is rejected.
-
-Algorithm 3: PDA Configuration Steps
-
-ALGORITHM_3_LFCO_PVMR.py shows step-by-step PDA configurations for valid strings.
-
-It details stack operations and transitions during palindrome validation.
-
-
-
-
+- Los símbolos terminales deben ser caracteres individuales
+- La gramática debe estar en forma adecuada para los parsers (sin recursión izquierda para LL(1), etc.)
+- La interfaz es por consola con capacidades básicas
 
 
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/gjhNPQOm)
+
